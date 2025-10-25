@@ -3,7 +3,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f1e8dd;
+    background-color: #ffffff;
 }
 
 /* This is about Nav bar Div */
@@ -42,29 +42,55 @@ body {
 /* This is about logo Div End */
 
 
-/* This is about nav-links Div*/
 .nav-links {
     display: flex;
     gap: 10px;
     font-weight: 700;
     list-style: none;
+    align-items: center;
+    text-decoration: none;
 }
 
-.nav-links a {
+.nav-links a {   /* Changeed the .nav-links li to .nav-links a as Links use in Navbar.jsx is same as <a> tag in HTML*/
     text-decoration: none;
     color: #ffffff;
     padding: 8px 16px;
     
 }
-.nav-links a:hover {
+/* This is for Nav-links hr tag */
+
+.nav-links hr {
+    border: none;
+    height: 3px;
+    width: 80%;
+    background-color: #e2501b;
+    border-radius: 10px;
+    
+}
+
+
+
+/* This is for Nav-links hover effect Popup fetures
+.nav-links li:hover {
+      font-size: large;
+      transition: font-size 0.2s ease;
+      cursor: pointer;
+      
+  
+} */
+
+
+
+
+/*  NO NEED TO ADD HOVER EFFECT FOR NAVBAR LINKS
+.nav-links li:hover {
     color: #573320;
     transition: color 0.3s ease;
     cursor: pointer;
     background-color: #f1e8dd;
-    opacity: 0.8;
     padding: 8px 16px;
-    border-radius: 5px;
-}
+    border-radius: 5px; 
+} */
 /* This is about nav-links Div End*/
 
 
@@ -88,20 +114,31 @@ body {
 
 .nav-login button:hover {
     border: 2px solid #f1e8dd;
-    background-color: #573320;
-    color: #f1e8dd;
-    transition: background-color 0.3s ease;
+    
 }
+.nav-login button:active {
+    border: 2px solid #f1e8dd;
+    color:#f1e8dd;
+    background-color: #573320;
+}
+
 
 .nav-login img {
     height: 40px;
     width: 40px;
 }
 
+.cart {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+
+}
 .cart-count {
     position: relative;
     top: -10px;
-    right: 10px;
+    left: -7px;
     background-color: red;
     color: white;
     border-radius: 50%;
