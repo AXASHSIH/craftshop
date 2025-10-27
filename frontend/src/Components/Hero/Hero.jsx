@@ -1,6 +1,6 @@
 import React from 'react'
 import './Hero.css'
-import banner from '../../assets/banner.png'  
+import banner from '../../assets/banner.png'
 import { Link } from 'react-router-dom';
 
 function Hero() {

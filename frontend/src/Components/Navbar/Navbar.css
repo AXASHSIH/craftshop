@@ -39,6 +39,7 @@ body {
     width: 60px;
     border-radius: 10px;
 }
+
 /* This is about logo Div End */
 
 
@@ -51,12 +52,14 @@ body {
     text-decoration: none;
 }
 
-.nav-links a {   /* Changeed the .nav-links li to .nav-links a as Links use in Navbar.jsx is same as <a> tag in HTML*/
+.nav-links a {
+    /* Changeed the .nav-links li to .nav-links a as Links use in Navbar.jsx is same as <a> tag in HTML*/
     text-decoration: none;
     color: #ffffff;
     padding: 8px 16px;
-    
+
 }
+
 /* This is for Nav-links hr tag */
 
 .nav-links hr {
@@ -65,7 +68,7 @@ body {
     width: 80%;
     background-color: #e2501b;
     border-radius: 10px;
-    
+
 }
 
 
@@ -102,6 +105,7 @@ body {
     padding: 0 10px;
 
 }
+
 .nav-login button {
     padding: 8px 16px;
     background-color: #f1e8dd;
@@ -114,11 +118,12 @@ body {
 
 .nav-login button:hover {
     border: 2px solid #f1e8dd;
-    
+
 }
+
 .nav-login button:active {
     border: 2px solid #f1e8dd;
-    color:#f1e8dd;
+    color: #f1e8dd;
     background-color: #573320;
 }
 
@@ -135,6 +140,7 @@ body {
 
 
 }
+
 .cart-count {
     position: relative;
     top: -10px;

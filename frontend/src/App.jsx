@@ -13,23 +13,23 @@ function App() {
 
   return (
     <>
-    <div>
-      <BrowserRouter>
-      <Navbar/> 
-      <Routes>
-        <Route path='/' element={<HomePage/>}/>
-        <Route path='/products' element={<Products/>}/>
-        <Route path='/about' element={<About/>}/>
-        <Route path='/contact' element={<Contact/>}/>
-        <Route path='/login' element={<LoginSignup/>}/>
-        <Route path="/cart" element={<Cart />} />
-        {/* <Route path='/products' element={<ShopCategory Category="Products"/>}/> */}
+      <div>
+        <BrowserRouter>
+          <Navbar />
+          <Routes>
+            <Route path='/' element={<HomePage />} />
+            <Route path='/products' element={<Products />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/contact' element={<Contact />} />
+            <Route path='/login' element={<LoginSignup />} />
+            <Route path="/cart" element={<Cart />} />
+            {/* <Route path='/products' element={<ShopCategory Category="Products"/>}/> */}
 
-      </Routes>     
-            
-      </BrowserRouter>
+          </Routes>
 
-    </div>
+        </BrowserRouter>
+
+      </div>
 
     </>
   )
