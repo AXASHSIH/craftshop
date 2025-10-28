@@ -1,8 +1,12 @@
 import React from 'react'
+import Carousel from '../Components/carousel/carousel'
+
+
 
 const Product = () => {
-  return (
-    <div>Product hcgcjgycy</div>
+  return (<>
+    <Carousel />
+    </>
   )
 }
 

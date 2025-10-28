@@ -1,0 +1,163 @@
+.footer {
+  max-width: 100%;
+  background:linear-gradient(180deg,#573320,#000000 90%);
+  color: #fff;
+  padding: 40px 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #f1e8dd;
+  
+}
+
+.footer-logo .logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 10%;
+}
+
+.newsletter {
+  max-width: 500px;
+}
+
+.newsletter h3 {
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.newsletter p {
+  margin-bottom: 15px;
+  color: #aaa;
+}
+
+.newsletter-input {
+  display: flex;
+  gap: 10px;
+}
+
+.newsletter-input input {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  background: #222;
+  color: #fff;
+}
+
+.newsletter-input button {
+  background-color: #e2501b;
+  border: none;
+  color: #111;
+  font-weight: 600;
+  border-radius: 4px;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.newsletter-input button:hover {
+  background-color: #ff6b36;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #222;
+  margin: 25px 0;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  margin-bottom: 25px;
+}
+
+.footer-section h4 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.footer-section ul li:hover {
+  color: #e2501b;
+}
+
+.social-icons {
+  display: flex;
+  gap: 12px;
+  font-size: 1.4rem;
+}
+
+.social-icons a {
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #e2501b;
+}
+
+.footer-bottom {
+  text-align: center;
+  color: #999;
+  font-size: 0.9rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .newsletter-input {
+    flex-direction: column;
+  }
+
+  .newsletter-input button {
+    width: 100%;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-logo h2 {
+    font-size: 1.5rem;
+  }
+
+  .social-icons {
+    justify-content: flex-start;
+  }
+}
