@@ -8,7 +8,7 @@ function Hero() {
     <>
       <div className="hero">
         <div className="hero-left">
-          <h1>Welcome to Craftshop</h1>
+          <h2>Welcome to Craftshop</h2>
           <p>Your one-stop shop for handmade crafts and unique products.</p>
           <Link to="products"><button className='hero-left-btn'>Shop Now</button></Link>
         </div>

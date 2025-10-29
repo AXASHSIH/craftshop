@@ -1,7 +1,33 @@
-body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #ffffff;
+/* -------------------------------
+   Global Reset & Base Styles
+---------------------------------- */
+
+/* Remove default margin/padding & set box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+
 }
+
+/* Set a clean, modern font stack */
+body {
+  font-family: 'Poppins', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f9f4ef; /* light beige background for warmth */
+  color: #333;
+  line-height: 1.6;
+  overflow-x: hidden; /* prevent horizontal scroll */
+}
+
+
+/* Scrollbar styling (optional, for better look) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #573320;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #7a4a2e;
+}
+
