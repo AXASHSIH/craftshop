@@ -1,0 +1,40 @@
+.contact-info {
+  flex: 1;
+  background-color: #fff;
+  padding: 20px 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  min-width: 280px;
+}
+
+.contact-info h3 {
+  margin: 15px 0 10px;
+  font-weight: 600;
+  color: #333;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 8px 0;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.business-hours {
+  margin-top: 20px;
+}
+
+.business-hours h4 {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.business-hours ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.9rem;
+}

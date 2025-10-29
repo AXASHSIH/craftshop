@@ -1,0 +1,23 @@
+.product-page {
+  background-color: #f5f6f8;
+  font-family: "Poppins", sans-serif;
+  color: #1f2937;
+  padding: 30px 15px 80px;
+}
+
+.product-main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+  .product-main {
+    flex-direction: column;
+  }
+}

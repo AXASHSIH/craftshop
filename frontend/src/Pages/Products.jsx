@@ -1,13 +1,18 @@
 import React from 'react'
-import Carousel from '../Components/carousel/carousel'
+import Carousel from '../Components/carousel/Carousel'
+import './Products.css'
+import ShopPage from '../Pages/ShopPage'
+
+function Products() {
+  return (
+    <>
+      < Carousel />
+      < ShopPage />
 
 
 
-const Product = () => {
-  return (<>
-    <Carousel />
     </>
   )
 }
 
-export default Product
+export default Products

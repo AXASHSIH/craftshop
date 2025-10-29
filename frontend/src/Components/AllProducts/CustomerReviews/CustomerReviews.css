@@ -1,0 +1,44 @@
+.reviews {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.review-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.review-list li {
+  background-color: #f9fafb;
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.reviews textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  min-height: 80px;
+  resize: none;
+  font-family: inherit;
+  margin-bottom: 10px;
+}
+
+.reviews button {
+  background-color: #c53030;
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.reviews button:hover {
+  background-color: #a32323;
+}
