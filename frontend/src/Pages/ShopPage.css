@@ -15,6 +15,7 @@
 .shop-container {
   display: flex;
   gap: 25px;
+  margin: auto;
 }
 
 .product-grid {
