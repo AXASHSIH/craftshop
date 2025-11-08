@@ -73,7 +73,7 @@ const Footer = () => {
         <div className="footer-section">
           <h4>Follow Us</h4>
           <div className="social-icons">
-            <a href="#">
+            <a href="https://www.instagram.com/craftshop2001/" target="_blank" rel="noopener noreferrer">
               <FaInstagram />
             </a>
             <a href="#">

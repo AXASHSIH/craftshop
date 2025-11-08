@@ -5,7 +5,7 @@
     max-width: 100%;
     align-items: center;
     justify-content: space-between;
-    padding-top: 5vh;
+    padding-top: 8vh;
 }
 .hero-left{
     flex:1;
@@ -105,6 +105,7 @@
     font-size: 13px;
     }
     .hero-right img {
-        height: 320px;
+        height: 300px;
+        width: auto;
     }
 }

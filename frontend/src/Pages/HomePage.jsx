@@ -7,8 +7,8 @@ const HomePage = () => {
   return (
     <>
       <Hero />
-      <FeatureHighlights />
       <TopSellingProducts />
+      <FeatureHighlights />
     </>
   )
 }
