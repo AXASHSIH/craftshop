@@ -20,8 +20,8 @@ staticfiles/
 *.pot
 *.pyc
 
-# Environment variables
-.env
+# Environment variables change by Ashish
+#.env
 
 # =========================
 # Node / React
