@@ -22,6 +22,33 @@
   font-size: 1.4rem;
   color: #573320;
   text-align: center;
+  align-items: center;
+  width: 100%;
+}
+.profile-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  display: flex;
+}
+.profile-greeting-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 35px;
+  text-align: left;
+}   
+.profile-header h3 {
+    font-size: 1.6rem;
+    color: #573320;
+    font-weight: 800;
+}
+.profile-greeting {
+  flex-grow: 1;
+  margin: auto;
+  padding: auto;
+    text-align: center;
+    font-size: 1.8rem;
+    color: #573320;
+    font-weight: 500;
 }
 
 .profile-form {
@@ -113,4 +140,64 @@
 .alert-error ul {
   margin: 0.1rem 0 0;
   padding-left: 1.1rem;
+}
+
+.image-upload {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.image-preview {
+  width: 120px;
+  height: 120px;
+  background-color: #f4e9df;
+  border-radius: 100%;
+  border: 2px dashed #573320;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  color: #573320;
+  font-size: 12px;
+}
+
+.image-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+
+@media (max-width: 1000px) {
+
+.image-upload {
+    width: 100%;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    }
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 1rem;
+  display: block;
+}
+.profile-greeting-container {
+  margin-left: 0;
+  margin-top: 10px;
+}   
+.profile-header h3 {
+    display: none;
+}
+.profile-greeting {
+    font-size: 1.4rem;
+    
+}
+
+
+
 }

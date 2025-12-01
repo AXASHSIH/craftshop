@@ -3,9 +3,21 @@ from .models import User
 
 
 class UserSerializer(serializers.ModelSerializer):
+    profile_image = serializers.ImageField(required=False)
+
     class Meta:
         model = User
-        fields = ("id", "name", "email", "mobile_number", "address", "date_joined")
+        fields = (
+            "id",
+            "name",
+            "email",
+            "mobile_number",
+            "address",
+            "profile_image",
+            "date_joined",
+        )
+        read_only_fields = ("id", "date_joined")
+
 
 
 class RegisterSerializer(serializers.ModelSerializer):

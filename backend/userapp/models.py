@@ -62,6 +62,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     mobile_number = models.CharField(max_length=15)
     address = models.TextField()
     name = models.CharField(max_length=150)
+    profile_image = models.ImageField(upload_to="profile_images/", null=True, blank=True)  # ✅ NEW
+
 
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)

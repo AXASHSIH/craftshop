@@ -58,10 +58,15 @@ export const AuthProvider = ({ children }) => {
   };
 
   // ⭐ NEW: update profile
-  const updateProfile = async (data) => {
-    const res = await api.patch("/auth/me/", data);
-    setUser(res.data); // keep context in sync
-  };
+const updateProfile = async (data) => {
+  const res = await api.patch("/auth/me/", data, {
+    headers: {
+      "Content-Type": "multipart/form-data",
+    },
+  });
+  setUser(res.data);
+};
+
 
   return (
     <AuthContext.Provider

@@ -6,7 +6,7 @@ from .models import User
 @admin.register(User)
 class UserAdmin(BaseUserAdmin):
     ordering = ['email']
-    list_display = ('email', 'name', 'mobile_number', 'address', 'is_staff', 'is_active')
+    list_display = ('email', 'name', 'mobile_number', 'address','profile_image', 'is_staff', 'is_active')
     search_fields = ('email', 'mobile_number')
     list_filter = ('is_staff', 'is_active')
     readonly_fields = ('date_joined',)
@@ -14,7 +14,7 @@ class UserAdmin(BaseUserAdmin):
     fieldsets = (
         (None, {'fields': ('email', 'password',)}),
         ('Important Dates', {'fields': ('last_login', 'date_joined')}),
-        ('Personal Info', {'fields': ('name','mobile_number', 'address')}),
+        ('Personal Info', {'fields': ('name','mobile_number', 'address', 'profile_image')}),
         ('Permissions', {'fields': ('is_staff', 'is_active', 'is_superuser', 'groups', 'user_permissions')}),
         
     )

@@ -69,18 +69,23 @@ const Navbar = () => {
                         </div>
 
                         {/* 👤 User name + icon (only when logged in) */}
-                        {isAuthenticated && user && (
-                            <Link
-                                to="/profile"
-                                className="profile_menu"
-                                onClick={() => setIsOpen(false)}
-                            >
-                                <div className="profile-icon">
+                        <Link to={isAuthenticated ? "/profile" : "/login"} className="profile_menu">
+
+                            <div className="profile-icon">
+                                {isAuthenticated && user?.profile_image ? (
+                                    <img src={user.profile_image} alt="Profile" />
+                                ) : (
                                     <User size={30} color="#fff" />
-                                </div>
-                                <p>{user.name}</p>
-                            </Link>
-                        )}
+                                )}
+                            </div>
+
+                            <p>
+                                {isAuthenticated && user?.name ? `Hello, ${user.name}` : "Guest"}
+                            </p>
+
+                        </Link>
+
+
 
                     </div>
                 </div>

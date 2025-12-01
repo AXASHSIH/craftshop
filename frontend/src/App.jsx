@@ -10,12 +10,15 @@ import Cart from "./Pages/Cart";
 import HomePage from "./Pages/HomePage";
 import Footer from "./Components/Footer/Footer";
 import Profile from "./Pages/Profile";
+import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
+
 
 function App() {
   return (
     <div>
       {/* Navbar always visible */}
       <Navbar />
+      <ScrollToTop />   {/* ✅ scroll reset on route change */}
 
       {/* Routes are handled by BrowserRouter in main.jsx */}
       <Routes>
