@@ -226,8 +226,27 @@
     border-radius: 15px;
 
 }
+  .profile_menu {
+    position: absolute;
+    top: -20vh;
+    left: 50px;
+    display: flex;
+    flex-direction: column;     /* stack name under icon */
+    align-items: center;        /* center horizontally */
+    text-decoration: none;
+    color: #fff;
+  }
+    .profile-icon {
+    background-color: rgb(240, 201, 201);
+    padding: 20px;
+    border-radius: 100%;
+    margin-left: 0;             /* no extra offset */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
- .profile_menu {
+ /* .profile_menu {
     position: absolute;
     top: -20vh;
     left: 50px;
@@ -241,13 +260,20 @@
     margin-left: 40px;
 
     
-  }
- .profile_menu p {
+  } */
+ /* .profile_menu p {
     position: absolute;
     width: 250px;
     top: 12vh;
     display: block;
-}
+} */
+  .profile_menu p {
+    position: static;           /* ❗ remove absolute */
+    width: auto;
+    margin-top: 8px;            /* space under circle */
+    display: block;
+    text-align: center;
+  }
 
 
 }

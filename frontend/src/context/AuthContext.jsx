@@ -6,17 +6,14 @@ import React, {
 } from "react";
 import api from "../api";
 
-// Create the context
 const AuthContext = createContext(null);
 
-// Simple hook to use it
 export const useAuth = () => useContext(AuthContext);
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);  // { id, name, email, ... } from /auth/me/
+  const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // On first load, check if we already have a token and fetch user
   useEffect(() => {
     const token = localStorage.getItem("access");
     if (!token) {
@@ -26,11 +23,8 @@ export const AuthProvider = ({ children }) => {
 
     api
       .get("/auth/me/")
-      .then((res) => {
-        setUser(res.data);
-      })
+      .then((res) => setUser(res.data))
       .catch(() => {
-        // Token invalid/expired
         localStorage.removeItem("access");
         localStorage.removeItem("refresh");
         setUser(null);
@@ -38,10 +32,8 @@ export const AuthProvider = ({ children }) => {
       .finally(() => setLoading(false));
   }, []);
 
-  // Login with email + password
   const login = async (email, password) => {
     const res = await api.post("/auth/login/", { email, password });
-
     localStorage.setItem("access", res.data.access);
     localStorage.setItem("refresh", res.data.refresh);
 
@@ -49,7 +41,6 @@ export const AuthProvider = ({ children }) => {
     setUser(me.data);
   };
 
-  // Signup (we won't auto-login, just create account)
   const signup = async ({ name, email, mobile_number, address, password }) => {
     await api.post("/auth/register/", {
       name,
@@ -60,24 +51,29 @@ export const AuthProvider = ({ children }) => {
     });
   };
 
-  // Logout
   const logout = () => {
     localStorage.removeItem("access");
     localStorage.removeItem("refresh");
     setUser(null);
   };
 
-  const value = {
-    user,
-    isAuthenticated: !!user,
-    login,
-    signup,
-    logout,
+  // ⭐ NEW: update profile
+  const updateProfile = async (data) => {
+    const res = await api.patch("/auth/me/", data);
+    setUser(res.data); // keep context in sync
   };
 
   return (
-    <AuthContext.Provider value={value}>
-      {/* wait for initial load so Navbar doesn't flicker */}
+    <AuthContext.Provider
+      value={{
+        user,
+        isAuthenticated: !!user,
+        login,
+        signup,
+        logout,
+        updateProfile,     // ⭐ export it
+      }}
+    >
       {!loading && children}
     </AuthContext.Provider>
   );

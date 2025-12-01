@@ -2,14 +2,12 @@ from rest_framework import generics, permissions
 from .models import User
 from .serializers import RegisterSerializer, UserSerializer
 
-
 class RegisterView(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = RegisterSerializer
     permission_classes = [permissions.AllowAny]
 
-
-class MeView(generics.RetrieveAPIView):
+class MeView(generics.RetrieveUpdateAPIView):   # ⬅️ was RetrieveAPIView
     serializer_class = UserSerializer
     permission_classes = [permissions.IsAuthenticated]
 

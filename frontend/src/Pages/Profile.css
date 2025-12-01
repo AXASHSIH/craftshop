@@ -1,0 +1,116 @@
+.profile-page {
+  padding-top: 10vh;
+  min-height: calc(100vh - 120px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  background-color: #f1e8dd;
+}
+
+.profile-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem 1.75rem;
+  max-width: 480px;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.profile-card h2 {
+  margin: 0 0 1rem;
+  font-size: 1.4rem;
+  color: #573320;
+  text-align: center;
+}
+
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.profile-form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  color: #573320;
+}
+
+.profile-form input,
+.profile-form textarea {
+  margin-top: 0.25rem;
+  padding: 0.5rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 0.9rem;
+  resize: vertical;
+}
+
+.profile-form input:focus,
+.profile-form textarea:focus {
+  outline: none;
+  border-color: #573320;
+  box-shadow: 0 0 0 2px rgba(87, 51, 32, 0.15);
+}
+
+.profile-form button {
+  margin-top: 0.75rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+  border: none;
+  background-color: #573320;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease,
+    transform 0.1s ease;
+}
+
+.profile-form button:hover:not(:disabled) {
+  background-color: #452718;
+  box-shadow: 0 6px 12px rgba(69, 39, 24, 0.25);
+  transform: translateY(-1px);
+}
+
+.profile-form button:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
+/* reuse alert styling (similar to LoginSignup) */
+.profile-alerts {
+  margin-bottom: 0.75rem;
+}
+
+.alert {
+  position: relative;
+  padding: 0.7rem 0.85rem;
+  border-radius: 10px;
+  margin-bottom: 0.4rem;
+  border: 1px solid transparent;
+  font-size: 0.85rem;
+}
+
+.alert-error {
+  background: #fef2f2;
+  border-color: #fca5a5;
+  color: #7f1d1d;
+}
+
+.alert-success {
+  background: #ecfdf3;
+  border-color: #6ee7b7;
+  color: #14532d;
+}
+
+.alert-title {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.alert-error ul {
+  margin: 0.1rem 0 0;
+  padding-left: 1.1rem;
+}

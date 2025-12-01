@@ -9,6 +9,7 @@ import { Routes, Route } from "react-router-dom";  // ✅ removed BrowserRouter
 import Cart from "./Pages/Cart";
 import HomePage from "./Pages/HomePage";
 import Footer from "./Components/Footer/Footer";
+import Profile from "./Pages/Profile";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<LoginSignup />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
 
       {/* Footer always visible */}
