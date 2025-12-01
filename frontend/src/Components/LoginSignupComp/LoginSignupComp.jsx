@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./LoginSignupComp.css";
-import api from "../../api.js"; // adjust if needed
+import { useAuth } from "../../context/AuthContext";  // ✅ NEW
 
 function LoginSignupComp() {
   const [isLogin, setIsLogin] = useState(true);
@@ -22,9 +22,12 @@ function LoginSignupComp() {
   });
 
   const [message, setMessage] = useState(""); // success
-  const [errors, setErrors] = useState([]);   // array of error messages
+  const [errors, setErrors] = useState([]);   // list of errors
 
-  // input handlers
+  // ✅ from AuthContext
+  const { login, signup } = useAuth();
+
+  // handle input changes
   const handleLoginChange = (e) => {
     const { name, value } = e.target;
     setLoginForm((prev) => ({ ...prev, [name]: value }));
@@ -35,33 +38,25 @@ function LoginSignupComp() {
     setSignupForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  // helper: extract ALL error messages from Django/DRF/SimpleJWT
+  // helper: extract all error messages from backend
   const extractErrors = (err) => {
     const msgs = [];
 
     if (err.response && err.response.data) {
       const data = err.response.data;
 
-      // Simple string
       if (typeof data === "string") {
         msgs.push(data);
-      }
-      // Single "detail" error (e.g. invalid credentials)
-      else if (data.detail) {
+      } else if (data.detail) {
         msgs.push(data.detail);
       } else {
-        // Field errors: {field: ["msg1", "msg2"], non_field_errors: ["msg"]}
         Object.entries(data).forEach(([field, value]) => {
           if (Array.isArray(value)) {
-            value.forEach((v) => {
-              msgs.push(
-                field === "non_field_errors" ? v : `${field}: ${v}`
-              );
-            });
-          } else {
-            msgs.push(
-              field === "non_field_errors" ? value : `${field}: ${value}`
+            value.forEach((v) =>
+              msgs.push(field === "non_field_errors" ? v : `${field}: ${v}`)
             );
+          } else {
+            msgs.push(field === "non_field_errors" ? value : `${field}: ${value}`);
           }
         });
       }
@@ -79,18 +74,11 @@ function LoginSignupComp() {
     setMessage("");
 
     try {
-      const res = await api.post("/auth/login/", {
-        email: loginForm.email,
-        password: loginForm.password,
-      });
-
-      localStorage.setItem("access", res.data.access);
-      localStorage.setItem("refresh", res.data.refresh);
-
+      await login(loginForm.email, loginForm.password);  // ✅ context call
       setMessage("Login successful!");
     } catch (err) {
       console.error(err);
-      setErrors(extractErrors(err)); // show ALL errors
+      setErrors(extractErrors(err));
     }
   };
 
@@ -106,7 +94,7 @@ function LoginSignupComp() {
     }
 
     try {
-      await api.post("/auth/register/", {
+      await signup({
         name: signupForm.name,
         email: signupForm.email,
         mobile_number: signupForm.mobile_number,
@@ -126,7 +114,7 @@ function LoginSignupComp() {
       setIsLogin(true);
     } catch (err) {
       console.error(err);
-      setErrors(extractErrors(err)); // show ALL signup errors too
+      setErrors(extractErrors(err));
     }
   };
 
@@ -157,12 +145,12 @@ function LoginSignupComp() {
             </button>
           </div>
 
-          {/* Alerts */}
+          {/* alerts */}
           {(errors.length > 0 || message) && (
             <div className="alerts-wrapper">
               {errors.length > 0 && (
                 <div className="alert alert-error">
-                  <span className="alert-title">Please fill this data correctly</span>
+                  <span className="alert-title">Something went wrong</span>
                   <ul>
                     {errors.map((err, idx) => (
                       <li key={idx}>{err}</li>
@@ -181,7 +169,7 @@ function LoginSignupComp() {
 
           {isLogin ? (
             <form className="form" onSubmit={handleLoginSubmit}>
-              <h2>Login</h2>
+              <h2>Login Form</h2>
               <input
                 type="email"
                 name="email"
@@ -203,7 +191,7 @@ function LoginSignupComp() {
               </a>
               <button type="submit">Login</button>
               <p>
-                Not a member?{" "}
+                Not a Member?{" "}
                 <a
                   href="#"
                   onClick={(e) => {
@@ -219,7 +207,7 @@ function LoginSignupComp() {
             </form>
           ) : (
             <form className="form" onSubmit={handleSignupSubmit}>
-              <h2>Sign Up</h2>
+              <h2>Signup Form</h2>
 
               <input
                 type="text"

@@ -105,6 +105,21 @@
   border-color: #f1e8dd;
 }
 
+.logout-btn {
+  padding: 6px 10px;
+  background-color: #f5ede6;
+  color: #573320;
+  border: none;
+  border-radius: 20px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background-color: #decbb8;
+}
+
+
 .cart {
   position: relative;
   display: flex;
