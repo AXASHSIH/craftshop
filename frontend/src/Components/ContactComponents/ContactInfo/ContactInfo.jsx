@@ -13,14 +13,14 @@ const ContactInfo = () => {
       <h3>You can reach us using any of the following methods:</h3>
 
       <div className="info-item">
-        <Phone size={18} /> <span>+91 82229 – 44567</span>
+        <Phone size={18} /> <span>+91 8249799644</span>
       </div>
       <div className="info-item">
-        <Mail size={18} /> <span>ecom@gurez.com</span>
+        <Mail size={18} /> <span>mycraftshop.official@gmail.com</span>
       </div>
       <div className="info-item">
         <MapPin size={18} />{" "}
-        <span>near Church, Anand Vihar Colony, Karnal, Haryana</span>
+        <span>near Bangursingh Post Office, Bangursingh, Dhenkanal, Odisha</span>
       </div>
 
       <div className="business-hours">

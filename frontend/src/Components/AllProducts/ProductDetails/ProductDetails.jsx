@@ -1,13 +1,19 @@
 import React, { useState } from "react";
 import "./ProductDetails.css";
 
-const tabs = {
-  Description: "Each Craftshop product is handmade with care. Minor variations make every piece unique.",
-  Specifications: "Material: Teak Wood | Dimensions: 10x10x5 inches | Finish: Natural Polish",
-  Care: "Wipe with a soft dry cloth. Avoid water exposure.",
-};
+const ProductDetails = ({ product }) => {
+  const tabs = {
+    Description: product.description || "No description available.",
 
-const ProductDetails = () => {
+    Specifications:
+      product.specifications ||
+      "No specifications provided for this product.",
+
+    Care:
+      product.care_instructions ||
+      "Wipe with a soft dry cloth. Avoid water exposure.",
+  };
+
   const [activeTab, setActiveTab] = useState("Description");
 
   return (
@@ -23,6 +29,7 @@ const ProductDetails = () => {
           </button>
         ))}
       </div>
+
       <div className="tab-content">{tabs[activeTab]}</div>
     </div>
   );

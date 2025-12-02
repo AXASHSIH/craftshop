@@ -1,32 +1,40 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./ProductGallery.css";
-import Logo from "../../../assets/Products/product_1.jpeg";
-import Logo2 from "../../../assets/Products/product_2.jpg";  
 
-const images = [
-Logo,
-Logo2,
-Logo,
-Logo,
-];
+const ProductGallery = ({ product }) => {
 
-const   ProductGallery = () => {
-  const [mainImage, setMainImage] = useState(images[0]);
+  const allImages = [
+    product.image,                        // main image first
+    ...(product.images || []).map(i => i.image)
+  ].filter(Boolean);                      // remove nulls
+
+  const [mainImage, setMainImage] = useState(allImages[0]);
+
+  useEffect(() => {
+    setMainImage(allImages[0]);
+  }, [product]);
 
   return (
     <div className="gallery">
-      <img src={mainImage} alt="Product" className="gallery-main" />
-      <div className="gallery-thumbs">
-        {images.map((img, i) => (
-          <img
-            key={i}
-            src={img}
-            alt="thumb"
-            className={`thumb ${mainImage === img ? "active" : ""}`}
-            onClick={() => setMainImage(img)}
-          />
-        ))}
-      </div>
+      {mainImage ? (
+        <img src={mainImage} alt={product.name} className="gallery-main" />
+      ) : (
+        <div className="gallery-main no-image">No image available</div>
+      )}
+
+      {allImages.length > 1 && (
+        <div className="gallery-thumbs">
+          {allImages.map((img, i) => (
+            <img
+              key={i}
+              src={img}
+              alt={`thumb-${i}`}
+              className={`thumb ${mainImage === img ? "active" : ""}`}
+              onClick={() => setMainImage(img)}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

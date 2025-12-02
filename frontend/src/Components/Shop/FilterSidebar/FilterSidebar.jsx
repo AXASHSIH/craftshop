@@ -7,9 +7,9 @@ const FilterSidebar = ({ setFilter }) => {
       <h3>Categories</h3>
       <ul>
         <li onClick={() => setFilter("All")}>All</li>
-        <li onClick={() => setFilter("Home Decor")}>Home Decor</li>
+        <li onClick={() => setFilter("Bottle Art")}>Bottle Art</li>
         <li onClick={() => setFilter("Wall Art")}>Wall Art</li>
-        <li onClick={() => setFilter("Kitchen")}>Kitchen</li>
+        <li onClick={() => setFilter("Other")}>Other</li>
       </ul>
     </aside>
   );
